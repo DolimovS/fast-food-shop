@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.container{
+    /* border: 2px solid red; */
+    max-width: 1440px;
+    width: 1024px;
+
+    margin: 0 auto;
+}
+
+header{
+    /* max-width: 1024px; */
+    width: 100%;
+    height: 466px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 171, 8);
+    border-radius: 0 0 30% 30%;
+}
+
+main{
+    background-color: rgb(249, 249, 249);
+}
+
+.nav_logo{
+    padding: 24px 0;
+}
+
+.header_img{
+    display: flex;
+    align-items: center;
+    /* gap: 52px; */
+}
+
+.header_img h1{
+    font-family: Nunito;
+font-size: 50px;
+font-weight: 800;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: left;
+color: #fff;
+}
+.header_img h1 span{
+    color: rgb(255, 92, 0);
+}
+
+.header_img p{
+    padding-top: 52px;
+    color: rgb(255, 255, 255);
+font-family: Nunito;
+font-size: 16px;
+font-weight: 600;
+line-height: 22px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+/* katogoriya */
+
+.katogoriya{
+    padding: 40px 0 50px 32px;
+    display: flex;
+    gap: 24px;
+    overflow: scroll;
+}
+.katogoriya::-webkit-scrollbar {
+    display: none;   
+  }
+
+.katogoriya button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 50px;
+    background: white;
+    transition: .3s;
+}
+.katogoriya button img{
+    width: 24px;
+    height: 24px;
+}
+.katogoriya button:hover,
+.katogoriya button:active{
+    background: rgb(255, 171, 8);
+}
+
+/* product */
+
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.product h1{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 40px;
+font-weight: 600;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: left;
+/* border: 2px solid red; */
+}
+
+.product_buttom{
+    display: flex;
+    justify-content: space-between;
+    width: 1024px;
+    /* border: 2px solid red; */
+}
+
+.product_karzinka{
+    max-width: 300px;
+    width: 100%;    
+    /* border: 2px solid red; */
+    border-radius: 18px;
+    background: rgb(255, 255, 255);
+    padding: 24px 16px ;
+}
+.product_karzinka .jami{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+.product_karzinka .jami>p{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 24px;
+font-weight: 600;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: left;
+}
+.product_jami{
+    border-radius: 6px;
+    padding: 3px 16px;
+    background: rgb(242, 242, 243);
+}
+.product_jami p{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: center;
+}
+
+/* product_buy */
+.product_buy .box{
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid rgb(242, 242, 243);
+border-top: 1px solid rgb(242, 242, 243);
+}
+
+.product_buy .box .left{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 0;
+}
+
+.product_buy .box .left img{
+    width: 64px;
+    height: 52px;
+    border-radius: 8px;
+}
+
+.box_center .nomi{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: left;
+}
+.box_center .massa{
+    color: rgb(177, 177, 177);
+font-family: Nunito;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.box_center .sum{
+    color: rgb(0, 0, 0);
+    font-family: Nunito;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-align: left;    
+}
+.box_button{
+    padding: 9px 12px;
+    border-radius: 12px;
+    background: rgb(242, 242, 243);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.box_button button{
+    color: rgb(0, 0, 0);
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+/* product_karzinka */
+.product_karzinka .itogo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 24px 0;
+}
+.itogo p,
+.itogo span{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 16px;
+font-weight: 400;
+line-height: 130%;
+letter-spacing: 0%;
+text-align: left;
+}
+
+.product_karzinka>button{
+    width: 100%;
+    border-radius: 12px;
+    background: rgb(255, 112, 32);
+    padding: 11px 32px;
+}
+.product_karzinka>button p{
+    color: rgb(255, 255, 255);
+font-family: Nunito;
+font-size: 16px;
+font-weight: 400;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.dastafka{
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dastafka img{
+    width: 24px;
+    height: 24px;
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: left;
+}
+
+
+/* .product_tavari */
+
+.product_tavari{
+    max-width: 670px;
+    width: 100%;
+    gap: 30px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.product_tavari .box{
+    border-radius: 18px;
+    height: 425px;
+    /* border: 2px solid red; */
+background: rgb(255, 255, 255);
+padding: 12px; 
+}
+
+.product_tavari .box img{
+}
+
+.product_tavari .box .sum{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 24px;
+font-weight: 600;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: left;
+padding: 16px 0 8px 0;
+}
+
+.product_tavari .box .nomi{
+    color: rgb(0, 0, 0);
+font-family: Nunito;
+font-size: 16px;
+font-weight: 400;
+line-height: 130%;
+letter-spacing: 0%;
+text-align: left;
+}
+.product_tavari .box .massa{
+    color: rgb(177, 177, 177);
+font-family: Nunito;
+font-size: 16px;
+font-weight: 600;
+line-height: 130%;
+letter-spacing: 0%;
+text-align: left;
+padding: 29px 0 8px 0;
+}
+
+.product_tavari .box button{
+    padding: 12px 101.5px;
+    border-radius: 12px;
+    background: rgb(242, 242, 243);
+}

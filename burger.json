@@ -1,0 +1,45 @@
+[
+    {
+        "id":1,
+        "name":"Мясная бомба",
+        "summa":689,
+        "massa":520,
+        "image":"./burger/Мясная бомба.png"
+    },
+    {
+        "id":2,
+        "name":"Супер сырный",
+        "summa":550,
+        "massa":512,
+        "image":"./burger/Супер сырный.png"
+    },
+    {
+        "id":3,
+        "name":"Сытный",
+        "summa":639,
+        "massa":580,
+        "image":"./burger/Сытный.png"
+    },
+    {
+        "id":4,
+        "name":"Тяжелый удар",
+        "summa":480,
+        "massa":470,
+        "image":"./burger/Тяжелый удар.png"
+    },
+    {
+        "id":5,
+        "name":"Вечная классика",
+        "summa":450,
+        "massa":450,
+        "image":"./burger/Вечная классика.png"
+    },    
+    {
+        "id":6,
+        "name":"Итальянский",
+        "summa":560,
+        "massa":510,
+        "image":"./burger/Итальянский.png"
+    }
+
+]
