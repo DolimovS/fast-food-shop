@@ -62,7 +62,6 @@ const buttonOnclick=(id)=>{
     else{
         data.push({...allproduct,count:1})
     }
-
     // localStorage.removeItem("data")
 
     localStorage.setItem("productData",JSON.stringify(data))
@@ -75,6 +74,42 @@ const productBuy=document.querySelector(".product_buy")
 
 let jami=0
 let jami_summa=0
+
+// Tugma bosilganda ishlaydigan funksiya
+function btnFunction(id, action) {
+    let localProduct = JSON.parse(localStorage.getItem("productData"));
+
+    // Id bo‘yicha mahsulot indexini topamiz
+    let index = localProduct.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+        if (action === "increment") {
+            localProduct[index].count++;
+        } else if (action === "decrement") {
+            localProduct[index].count--;
+
+            // Agar count 0 bo‘lsa, mahsulotni o‘chirib tashlaymiz
+            if (localProduct[index].count <= 0) {
+                localProduct.splice(index, 1); // o‘chirish
+            }
+        }
+
+        // Yangilangan ma'lumotni saqlaymiz
+        localStorage.setItem("productData", JSON.stringify(localProduct));
+        updateCart();
+    }
+}
+
+// Delegatsiya qilish: faqat 1 marta hodisa biriktiriladi
+productBuy.addEventListener("click", function (e) {
+    if (e.target.tagName === "BUTTON") {
+        const btn = e.target;
+        const id = parseInt(btn.dataset.id);
+        const action = btn.dataset.action;
+        btnFunction(id, action);
+    }
+});
+
 
 setInterval(()=>{
     let localProduct=JSON.parse(localStorage.getItem("productData"))
@@ -93,7 +128,11 @@ setInterval(()=>{
                             <p class="sum">${item.summa}₽</p>
                         </div>
                 </div>
-                <div class="box_button"><button>-</button><span>${item.count}</span><button>+</button></div>
+                  <div class="box_button">
+                        <button data-id="${item.id}" data-action="decrement">-</button>
+                        <span>${item.count}</span>
+                        <button data-id="${item.id}" data-action="increment">+</button>
+                    </div>
             </div>
             `;
             jami+=item.count
@@ -111,46 +150,8 @@ setInterval(()=>{
     let jami_narxi=document.querySelector(".jami_narxi")
     jami_narxi.textContent=`${jami_summa}₽`
     // console.log(jami_summa);
-},100)
 
-
-
-
-// let localProduct=JSON.parse(localStorage.getItem("productData"))
-
-// console.log(localProduct);
-
-// localProduct.forEach((item)=>{
-
-//     productBuy.innerHTML+=`
-//             <div class="box">
-//                 <div class="left">
-//                     <img src="${item.image}" alt="">
-//                         <div class="box_center">
-//                             <p class="nomi">${item.name}</p>
-//                             <p class="massa">${item.massa}г</p>
-//                             <p class="sum">${item.summa}₽</p>
-//                         </div>
-//                 </div>
-//                 <div class="box_button"><button>-</button><span>${item.count}</span><button>+</button></div>
-//     </div>
-//             `
-// })
-
-            // productBuy.innerHTML+=`
-            // <div class="box">
-            //     <div class="left">
-            //         <img src="${item.image}" alt="">
-            //             <div class="box_center">
-            //                 <p class="nomi">${item.name}</p>
-            //                 <p class="massa">${item.massa}г</p>
-            //                 <p class="sum">${item.summa}₽</p>
-            //             </div>
-            //     </div>
-            //     <div class="box_button"><button>-</button><span>00</span><button>+</button></div>
-            // </div>
-            // `
-
+},1000)
 
 
 
